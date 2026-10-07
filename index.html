@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DORTEC | Automatic Gates, Doors & Shutters</title>
+<meta name="description" content="DORTEC designs, supplies and installs automatic gates, roller shutters, garage doors and automatic doors.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%276%27 fill=%27%2314191D%27/%3E%3Cpath d=%27M8 7v18M13 7v18M18 7v18M23 7v18%27 stroke=%27%23D9A441%27 stroke-width=%273%27/%3E%3C/svg%3E">
+<meta name="theme-color" content="#14191D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F4F2;--ink:#14191D;--mute:#4F5A62;--line:#C9CED1;--panel:#E6E9E8;--brass:#9A6A1F;--slat:#2A3238;--slat2:#12171A;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101518;--ink:#EEF0EE;--mute:#9AA5AC;--line:#2B343A;--panel:#171E22;--brass:#D9A441;--slat:#3A444B;--slat2:#1B2125}}
+:root[data-theme="dark"]{--bg:#101518;--ink:#EEF0EE;--mute:#9AA5AC;--line:#2B343A;--panel:#171E22;--brass:#D9A441;--slat:#3A444B;--slat2:#1B2125}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Archivo","Cairo",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+[dir=rtl] body,[dir=rtl] button{font-family:"Cairo","Archivo",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font:800 24px/1 "Archivo",sans-serif;font-stretch:125%;letter-spacing:.04em;text-decoration:none}
+.logo i{font-style:normal;color:var(--brass)}
+nav{display:flex;gap:26px;font-size:15px;font-weight:600}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+button{font:inherit;cursor:pointer}
+.lang{border:1px solid var(--line);background:none;color:var(--ink);border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px}
+.lang:hover{border-color:var(--brass)}
+@media(max-width:760px){nav{display:none}}
+/* hero */
+.hero{padding:56px 0 72px}
+.hero h1{font:800 clamp(38px,6.4vw,76px)/1.02 "Archivo",sans-serif;font-stretch:112%;letter-spacing:-.02em;margin:0 0 20px;max-width:15ch}
+[dir=rtl] .hero h1{font-family:"Cairo",sans-serif;line-height:1.25;letter-spacing:0;max-width:14ch}
+.hero p.lead{font-size:19px;color:var(--mute);max-width:52ch;margin:0 0 30px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:4px;font-weight:700;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:var(--bg)}
+.btn.alt{background:none;color:var(--ink)}
+.btn:hover{border-color:var(--brass)}
+.stage{position:relative;margin-top:48px;height:clamp(230px,38vw,400px);border:1px solid var(--line);background:var(--panel);overflow:hidden;border-radius:6px;display:grid;place-items:center}
+.stage .word{font:800 clamp(44px,13vw,170px)/1 "Archivo",sans-serif;font-stretch:125%;letter-spacing:.06em;color:var(--ink);padding-inline-start:.06em}
+.stage .word i{font-style:normal;color:var(--brass)}
+.gate{position:absolute;inset:0;width:100%;background:repeating-linear-gradient(90deg,var(--slat) 0 16px,var(--slat2) 16px 20px);border-inline-end:10px solid var(--brass);transition:transform 1.6s cubic-bezier(.65,0,.25,1)}
+[dir=rtl] .gate{transform-origin:right}
+.stage.open .gate{transform:translateX(-96%)}
+[dir=rtl] .stage.open .gate{transform:translateX(96%)}
+.toggle{position:absolute;bottom:14px;inset-inline-end:14px;z-index:2;background:var(--bg);color:var(--ink);border:1px solid var(--ink);border-radius:999px;padding:8px 18px;font-weight:700;font-size:14px}
+.toggle:hover{border-color:var(--brass)}
+@media(prefers-reduced-motion:reduce){.gate{transition:none}}
+/* sections */
+section{padding:80px 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(28px,4vw,44px)/1.12 "Archivo",sans-serif;font-stretch:108%;letter-spacing:-.01em;margin:0 0 14px;max-width:20ch}
+[dir=rtl] h2{font-family:"Cairo",sans-serif;line-height:1.35;letter-spacing:0}
+.sub{color:var(--mute);max-width:56ch;margin:0 0 40px}
+.row{display:grid;grid-template-columns:90px 1fr 1.3fr;gap:24px;align-items:center;padding:26px 0;border-top:1px solid var(--line)}
+.row:last-child{border-bottom:1px solid var(--line)}
+.row h3{margin:0;font-size:24px;line-height:1.2}
+.row p{margin:0;color:var(--mute)}
+.ico{width:72px;height:72px;border:1px solid var(--line);background:var(--panel);border-radius:4px}
+.ico.g{background:repeating-linear-gradient(90deg,var(--slat) 0 5px,var(--slat2) 5px 7px)}
+.ico.s{background:repeating-linear-gradient(180deg,var(--slat) 0 6px,var(--slat2) 6px 8px)}
+.ico.d{background:linear-gradient(90deg,var(--slat) 0 46%,var(--bg) 46% 54%,var(--slat) 54%)}
+.ico.m{background:radial-gradient(circle,var(--brass) 0 12px,var(--slat) 13px 24px,var(--slat2) 25px)}
+@media(max-width:760px){.row{grid-template-columns:64px 1fr;gap:6px 18px}.row p{grid-column:1/-1}.ico{width:56px;height:56px}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:36px 40px}
+.grid h3{margin:0 0 6px;font-size:20px;border-inline-start:4px solid var(--brass);padding-inline-start:12px}
+.grid p{margin:0;color:var(--mute)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:0;counter-reset:s}
+.steps li{counter-increment:s;padding:22px 22px 22px 0;border-top:3px solid var(--ink);position:relative}
+[dir=rtl] .steps li{padding:22px 0 22px 22px}
+.steps li::before{content:counter(s);display:block;font:800 40px/1 "Archivo",sans-serif;color:var(--brass);margin-bottom:10px}
+.steps h3{margin:0 0 4px;font-size:19px}.steps p{margin:0;color:var(--mute);font-size:16px}
+.contact{background:var(--panel);border:1px dashed var(--mute);border-radius:6px;padding:34px;max-width:640px}
+.contact h3{margin:0 0 8px;font-size:22px}.contact p{margin:0;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mute);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="logo" href="#top" aria-label="DORTEC">DOR<i>TEC</i></a>
+<nav aria-label="Main">
+<a href="#products" data-en="Products" data-ar="المنتجات">Products</a>
+<a href="#why" data-en="Why DORTEC" data-ar="لماذا دورتك">Why DORTEC</a>
+<a href="#process" data-en="How we work" data-ar="طريقة العمل">How we work</a>
+<a href="#contact" data-en="Contact" data-ar="تواصل معنا">Contact</a>
+</nav>
+<button class="lang" id="lang" type="button" aria-label="Switch language">العربية</button>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+<h1 data-en="Doors and gates that open the way you live." data-ar="بوابات وأبواب تفتح لك بالطريقة التي تعيش بها.">Doors and gates that open the way you live.</h1>
+<p class="lead" data-en="DORTEC designs, supplies and installs automatic gates, roller shutters, garage doors and automatic doors for homes, shops and offices." data-ar="تصمم دورتك وتورّد وتركّب البوابات الأوتوماتيكية وشيش الحصيرة وأبواب الجراج والأبواب الأوتوماتيكية للمنازل والمحلات والمكاتب.">DORTEC designs, supplies and installs automatic gates, roller shutters, garage doors and automatic doors for homes, shops and offices.</p>
+<div class="btns"><a class="btn" href="#products" data-en="See what we build" data-ar="شاهد ما نصنعه">See what we build</a><a class="btn alt" href="#contact" data-en="Get in touch" data-ar="تواصل معنا">Get in touch</a></div>
+<div class="stage" id="stage" aria-label="Animated sliding gate revealing the DORTEC name">
+<div class="word" aria-hidden="true">DOR<i>TEC</i></div>
+<div class="gate"></div>
+<button class="toggle" id="toggle" type="button" data-en="Close gate" data-ar="إغلاق البوابة">Close gate</button>
+</div>
+</div>
+
+<section id="products"><div class="wrap">
+<h2 data-en="Four ways to secure and simplify your entrance." data-ar="أربع طرق لتأمين مدخلك وتسهيل حياتك.">Four ways to secure and simplify your entrance.</h2>
+<p class="sub" data-en="Every product is made to measure, motorised, and ready to be controlled by remote or phone." data-ar="كل منتج يُصنع بالمقاس المناسب، ويعمل بمحرك، ويمكن التحكم به بالريموت أو الموبايل.">Every product is made to measure, motorised, and ready to be controlled by remote or phone.</p>
+<div class="row"><div class="ico g"></div><h3 data-en="Automatic gates" data-ar="البوابات الأوتوماتيكية">Automatic gates</h3><p data-en="Sliding and swing gates in aluminium, steel and wood-finish designs. From clean modern slats to classic ironwork." data-ar="بوابات سحب ومفصلية من الألومنيوم والحديد وبتشطيبات خشبية، من التصميمات العصرية البسيطة إلى الكلاسيكية.">Sliding and swing gates in aluminium, steel and wood-finish designs. From clean modern slats to classic ironwork.</p></div>
+<div class="row"><div class="ico s"></div><h3 data-en="Roller shutters" data-ar="شيش الحصيرة">Roller shutters</h3><p data-en="Insulated aluminium shutters for windows, balconies and shopfronts. Privacy, shade and protection from weather and break-ins." data-ar="شيش ألومنيوم معزول للشبابيك والبلكونات والمحلات. خصوصية وظل وحماية من الطقس والسرقة.">Insulated aluminium shutters for windows, balconies and shopfronts. Privacy, shade and protection from weather and break-ins.</p></div>
+<div class="row"><div class="ico d"></div><h3 data-en="Automatic doors" data-ar="الأبواب الأوتوماتيكية">Automatic doors</h3><p data-en="Sliding doors with sensors for shops, clinics, offices and buildings that need smooth, hands-free access." data-ar="أبواب سحب بحساسات للمحلات والعيادات والمكاتب والمباني التي تحتاج دخولاً سلساً بدون لمس.">Sliding doors with sensors for shops, clinics, offices and buildings that need smooth, hands-free access.</p></div>
+<div class="row"><div class="ico m"></div><h3 data-en="Motors and controls" data-ar="المواتير والتحكم">Motors and controls</h3><p data-en="Quiet, durable motors for garage doors and shutters, with remotes, wiring and accessories supplied and set up." data-ar="مواتير هادئة ومتينة لأبواب الجراج والشيش، مع الريموت والتوصيلات والملحقات والتركيب.">Quiet, durable motors for garage doors and shutters, with remotes, wiring and accessories supplied and set up.</p></div>
+</div></section>
+
+<section id="why"><div class="wrap">
+<h2 data-en="Built to protect, designed to be seen." data-ar="مصنوعة للحماية، ومصممة لتُرى.">Built to protect, designed to be seen.</h2>
+<p class="sub" data-en="A gate or shutter is the first thing people notice. We make sure it looks right and works every day." data-ar="البوابة أو الشيش أول ما يلفت النظر. نحرص أن يبدو بشكل جيد ويعمل كل يوم.">A gate or shutter is the first thing people notice. We make sure it looks right and works every day.</p>
+<div class="grid">
+<div><h3 data-en="Security" data-ar="الأمان">Security</h3><p data-en="Strong profiles and locking systems that resist forced entry, with automatic stop when something is in the way." data-ar="قطاعات قوية وأنظمة قفل تقاوم الاقتحام، مع إيقاف تلقائي عند وجود عائق.">Strong profiles and locking systems that resist forced entry, with automatic stop when something is in the way.</p></div>
+<div><h3 data-en="Smart control" data-ar="تحكم ذكي">Smart control</h3><p data-en="Open and close from a remote or your phone, with manual operation for emergencies." data-ar="افتح وأغلق بالريموت أو الموبايل، مع إمكانية التشغيل اليدوي في الطوارئ.">Open and close from a remote or your phone, with manual operation for emergencies.</p></div>
+<div><h3 data-en="Comfort" data-ar="الراحة">Comfort</h3><p data-en="Thermal and sound insulation keeps rooms cooler, quieter and private through the day." data-ar="عزل حراري وصوتي يحافظ على برودة الغرف وهدوئها وخصوصيتها طوال اليوم.">Thermal and sound insulation keeps rooms cooler, quieter and private through the day.</p></div>
+<div><h3 data-en="Design" data-ar="التصميم">Design</h3><p data-en="Finishes and styles chosen to match your building, from modern to classic." data-ar="تشطيبات وأشكال تُختار لتناسب مبناك، من العصري إلى الكلاسيكي.">Finishes and styles chosen to match your building, from modern to classic.</p></div>
+</div></div></section>
+
+<section id="process"><div class="wrap">
+<h2 data-en="From first visit to final test." data-ar="من أول زيارة إلى التجربة النهائية.">From first visit to final test.</h2>
+<p class="sub" data-en="One team handles the whole job, so there is one point of responsibility." data-ar="فريق واحد يتولى العمل كله، فتكون المسؤولية واضحة.">One team handles the whole job, so there is one point of responsibility.</p>
+<ol class="steps">
+<li><h3 data-en="Consult" data-ar="المعاينة">Consult</h3><p data-en="We visit, measure and listen to what you need." data-ar="نزورك ونقيس ونفهم احتياجك.">We visit, measure and listen to what you need.</p></li>
+<li><h3 data-en="Design" data-ar="التصميم">Design</h3><p data-en="You choose the style, finish and controls." data-ar="تختار الشكل والتشطيب ونظام التحكم.">You choose the style, finish and controls.</p></li>
+<li><h3 data-en="Install" data-ar="التركيب">Install</h3><p data-en="Trained technicians fit and test everything." data-ar="فنيون مدرّبون يركّبون ويختبرون كل شيء.">Trained technicians fit and test everything.</p></li>
+<li><h3 data-en="Support" data-ar="الدعم">Support</h3><p data-en="Maintenance and after-sales service when you need it." data-ar="صيانة وخدمة ما بعد البيع وقت احتياجك.">Maintenance and after-sales service when you need it.</p></li>
+</ol>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<h2 data-en="Talk to DORTEC." data-ar="تحدث مع دورتك.">Talk to DORTEC.</h2>
+<div class="contact"><h3 data-en="Contact details coming soon" data-ar="بيانات التواصل قريباً">Contact details coming soon</h3><p data-en="We are preparing our contact information. Please check back shortly." data-ar="نجهّز بيانات التواصل الخاصة بنا. يرجى المراجعة قريباً.">We are preparing our contact information. Please check back shortly.</p></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> DORTEC</span><span data-en="Automatic gates, doors and shutters" data-ar="بوابات وأبواب وشيش أوتوماتيك">Automatic gates, doors and shutters</span></div></footer>
+
+<script>
+(function(){
+var root=document.documentElement,stage=document.getElementById('stage'),tg=document.getElementById('toggle'),lg=document.getElementById('lang');
+document.getElementById('yr').textContent=new Date().getFullYear();
+var lang='en';
+try{var sv=localStorage.getItem('dortec-lang');if(sv==='ar'||sv==='en')lang=sv}catch(e){}
+function label(){var o=stage.classList.contains('open');tg.textContent=lang==='ar'?(o?'إغلاق البوابة':'فتح البوابة'):(o?'Close gate':'Open gate')}
+function apply(){
+root.lang=lang;root.dir=lang==='ar'?'rtl':'ltr';
+document.querySelectorAll('[data-en]').forEach(function(el){if(el!==tg)el.textContent=el.getAttribute('data-'+lang)});
+lg.textContent=lang==='ar'?'English':'العربية';label();
+try{localStorage.setItem('dortec-lang',lang)}catch(e){}
+}
+lg.addEventListener('click',function(){lang=lang==='ar'?'en':'ar';apply()});
+tg.addEventListener('click',function(){stage.classList.toggle('open');label()});
+apply();
+setTimeout(function(){stage.classList.add('open');label()},500);
+})();
+</script>
+</body>
+</html>
